@@ -42,7 +42,8 @@ and the output is :
 
 and the School & District summary snapshots are shown below : 
 
-## School Summary : While calculating Per School Budget & per student budget output looks like this :
+## School Summary : 
+- While calculating Per School Budget & per student budget output looks like this :
 
 ![image](https://user-images.githubusercontent.com/92283185/141699858-3b1fa550-a9e1-4c65-a2fc-f291cf0e4c4c.png)
 
@@ -54,7 +55,7 @@ and the School & District summary snapshots are shown below :
 
 ![image](https://user-images.githubusercontent.com/92283185/141700508-9f7f6fbf-5508-48e1-9d01-f60809cada34.png)
 
-- Another plus side from this data replacement is that it did not change the math and reading scores by grade. Granted, both the average math and reading score summaries were stratisfied by school and grade level. As shown above, the summary tables display "NaN" for ninth grade at Thomas High School whereas the remaining data remained intact.
+- Another plus side from this data replacement is that it did not change the math and reading scores by grade. Granted, both the average math and reading score summaries were stratisfied by school and grade level. As shown below, the summary tables for Math & Reading Score Grade-wise display "NaN" for ninth grade at Thomas High School whereas the remaining data remained intact.
 
 ## Math Score Grade-wise :
 
@@ -73,5 +74,49 @@ and the School & District summary snapshots are shown below :
 ## Bottom 5 Schools :
 
 ![image](https://user-images.githubusercontent.com/92283185/141702058-187b1071-db28-43af-84b4-e9fee2cba315.png)
+
+## School Spending Summary :
+
+Further the question arised as how does school spending per student affect the school's average scores and passing percentages?  Solution to this will help the school board make decisions about the budget for the upcoming school year. For that we need to orgabize the data by spending ranges for the schools. 
+
+Using the describe() method will help us determine the spending bins we should use, based on the descriptive statistics. We got the following output :
+
+![image](https://user-images.githubusercontent.com/92283185/141905971-7b96404e-b752-4efc-88b9-26bccb2cb45d.png)
+
+Based on the figures given by the .describe() method, spending ranges per student in the school district were determined: 
+
+![image](https://user-images.githubusercontent.com/92283185/141907094-e013f17b-24f6-427d-b28a-aaed96596a20.png)
+
+School that spent between <$584 appear to have the best-performing students in math and reading. So the schools which spent the lowest are the highest performing shcool in Math & Reading.
+
+![image](https://user-images.githubusercontent.com/92283185/141912641-157cab7c-14ce-465b-9c24-1414deb6e229.png)
+
+## Scores by School Size
+
+Scores by school size were calculated by determining size ranges for all 15 schools in the district:
+
+-Small (<1000) 
+-Medium (1000-2000) 
+-Large (2000-5000)
+
+When considering School Sizes, "Large" Schools (Over 2,000 Students) have the lowest average scores and passing percentages. The difference in performance between "Small" and "Medium" Size Schools is negligible (approximately 1%). Interestingly, all District schools in this dataset are characterized as "Large" schools. This may be an indication that students in this district learn and perform better in smaller, more intimate settings.
+
+![image](https://user-images.githubusercontent.com/92283185/141914350-0ff23bcf-4d8b-4546-8fa3-479036059549.png)
+
+## Charter vs. District Schools
+
+Charter schools generally performed better than District schools in this analysis. The top five schools with the highest overall passing percentages are all Charter schools, whereas the bottom five are all District Schools. Charter schools in this dataset were typically characterized as "Small" and "Medium" size schools. As seen in the DataFrame below, Charter schools have a 36% higher overall passing percentage than District schools.
+
+![image](https://user-images.githubusercontent.com/92283185/141915823-6cdd9084-fe86-471d-884b-da625c349885.png)
+
+## Summary
+Unfortunately, it is not possible to determine the extent of the potential academic dishonesty or identify soecific indivuals to exclude from the dataset. As a consequence of this, the entire ninth grade of students from Thomas High School have had their scores omitted from the results. This is a suboptimal situation because a full set of data is ideal for creating the most accurate results.
+
+Relacing the ninth graders' scores with NaN caused Thomas High School's overall passing percentages and average scores to plummet. The district as a whole has also had its average math and reading scores decrease, as well as the overall passing percentage for students. Furthermore, Thomas High School lost its placement as a top five school within this District. However, after updating the total student counts to exclude the Thomas High School ninth graders and omitting their scores from the dataset, Thomas High School regained its high average scores and retained its position as the number two school in the District. To view the full script, please open PyCitySchools_Challenge.ipynb in Jupyter Notebook.
+
+
+
+
+
 
 
